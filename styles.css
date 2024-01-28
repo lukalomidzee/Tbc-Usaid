@@ -1,0 +1,924 @@
+/* Fonts */
+@font-face {
+    font-family: 'tbcfont';
+    src: url(./assets/fonts/tbcfontnormal.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tbcfont';
+    src: url(./assets/fonts/tbcfontlightbold.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tbcfont';
+    src: url(./assets/fonts/tbcfontbold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tbcfont';
+    src: url(./assets/fonts/tbcfontextrabold.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* ------- General Classes ------- */
+.background-gray {
+    background-color: #2B2B2B;
+}
+
+.background-dark {
+    background-color: #161616;
+}
+
+.link {
+    color: #00AEF3;
+}
+
+/* ----- Flex Clases ----- */
+/* Display Flex */
+.d-f {
+    display: flex;
+}
+
+/* Flex Direction */
+.fd-c {
+    flex-direction: column;
+}
+
+.fd-r {
+    flex-direction: row;
+}
+
+/* Align Items */
+.ai-c {
+    align-items: center;
+}
+
+/* Justify Content */
+.jc-c {
+    justify-content: center;
+}
+
+.jc-se {
+    justify-content: space-evenly;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-e {
+    justify-content: end;
+}
+
+/* @--------- Mobile Design ---------@ */
+* {
+    color: #F4f4f4;
+    text-decoration: none;
+    font-family: 'tbcfont', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    min-width: 320px;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 69px;
+    min-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ----- Header ----- */
+header {
+    position: fixed;
+    top: 0;
+    min-width: 320px;
+    width: 100%;
+    height: 69px;
+    background-color: #1A1E1F;
+    z-index: 2;
+}
+
+#tbc-logo-header {
+    width: 130px;
+    height: 29px;
+    margin-left: 20px;
+}
+
+.header-link {
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #00AEF3;
+}
+
+nav {
+    display: none;
+}
+
+#sidebar {
+    display: block;
+    width: 26px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#sidebar div {
+    transition: 0.4s;
+}
+
+.bar {
+    background-color: #F4f4f4;
+}
+
+#bar-one {
+    width: 13px;
+    height: 3px;
+    border-radius: 50px;
+    z-index: 5;
+}
+
+#bar-two {
+    width: 26px;
+    height: 3px;
+    border-radius: 50px;
+    z-index: 5;
+}
+
+#bar-three {
+    width: 13px;
+    height: 3px;
+    border-radius: 50px;
+    align-self: end;
+    z-index: 5;
+}
+
+.open #bar-one {
+    -webkit-transform: rotate(-135deg) translate(-4px, -1px);
+    transform: rotate(-135deg) translate(-4px, -1px);
+}
+
+.open #bar-two {
+    -webkit-transform: rotate(-45deg) translate(0px, 0px);
+    transform: rotate(-45deg) translate(0px, 0px);
+}
+
+.open #bar-three {
+    -webkit-transform: rotate(-135deg) translate(-4px, -3px);
+    transform: rotate(-135deg) translate(4px, 3px);
+}
+
+.x-gray {
+    background-color: #767676;
+}
+
+#navbar-link {
+    width: 200px;
+    height: 52px;
+    margin: 80px 0px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+#mobile-menu {
+    width: 200px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    right: -200px;
+    background-color: #222222;
+    z-index: 500;
+    transition: right 0.4s ease;
+}
+
+#sidebar-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: #161616;
+    opacity: 0.62;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+/* ----- Main Info ----- */
+#main-image {
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
+    overflow-x: hidden;
+}
+
+#image-div {
+    position: relative;
+}
+
+#main-image-text {
+    position: absolute;
+    top: 26.5%;
+    left: 6.25%;
+    gap: 3px;
+}
+
+#main-image-text > h1 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+#main-image-text > h2 {
+    font-size: 31px;
+    font-weight: 800;
+    line-height: 38.4px;
+    font-variant-caps: all-small-caps;
+}
+
+#info-div {
+    gap: 32px;
+    line-height: 25.6px;
+    padding: 0px 20px 0px 20px;
+    margin: 32px 0px 32px 0px;
+}
+
+.link {
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #AAAAAA;
+}
+
+#more {
+    height: 48px;
+}
+
+/* ----- Courses ----- */
+#courses {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#courses-title {
+    font-size: 24px;
+    margin-bottom: 26px;
+}
+
+#cards {
+    gap: 24.55px;
+}
+
+.card {
+    width: 280px;
+    height: 289.4px;
+    border-radius: 6px;
+    border: 1px solid #555555;
+}
+
+.card-image {
+    width: 280px;
+    height: 140px;
+    border-radius: 6px 6px 0px 0px;
+    margin-bottom: 26px;
+}
+
+.card-text {
+    margin-left: 20px;
+}
+
+.course-link {
+    font-weight: 500;
+    color: #00AEF3;
+    transition: color 0.3s ease;
+}
+
+.course-link:hover {
+    color: #0080B0;
+}
+
+.card-title {
+    height: 22.4px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    height: 22.4px;
+}
+
+.card a {
+    font-size: 14px;
+}
+
+.card-link {
+    gap: 10px;
+}
+
+/* ----- Slider ----- */
+#slider-background {
+    width: 100%;
+}
+
+#slider {
+    width: 281.6px;
+    height: 430px;
+    padding: 25px 19.2px 0px 19.2px;
+    box-sizing: border-box;
+}
+
+#slider-header {
+    font-size: 18px;
+    align-self: flex-start;
+}
+
+#slider-photos {
+    padding-top: 55px;
+}
+
+.slider-page {
+    height: 257px;
+}
+
+.slider-arrow {
+    display: none;
+    cursor: pointer;
+}
+
+.slider-arrow:hover path {
+    fill: #AAAAAA;
+}
+
+.slider-arrow-within {
+    width: 20px;
+    height: 40px;
+}
+
+#slider-one, #slider-two, #slider-three {
+    display: none;
+}
+
+.active-slide {
+    display: flex !important;
+}
+
+#usaid {
+    width: 219px;
+    height: 66px;
+}
+
+#space {
+    width: 200px;
+    height: 66px;
+}
+
+#tnet {
+    width: 250px;
+    height: 45px;
+}
+
+#tegeta {
+    width: 180px;
+    height: 52px;
+}
+
+#spectre {
+    width: 131px;
+    height: 45px;
+}
+
+#tbcleasing {
+    width: 220px;
+    height: 67px;
+}
+
+#ufc {
+    width: 232px;
+    height: 65px;
+}
+
+#slider-page-dots {
+    width: 48px;
+    height: 75px;
+    padding: 30px 7.5px 0px 7.5px;
+}
+
+.slider-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #F4f4f4;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* ----- Frequently Asked Questions ----- */
+#faq {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 25px 40px 25px;
+}
+
+#faq-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 35px;
+}
+
+.question-header {
+    min-width: 270px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.question-div {
+    height: 80px;
+    border-bottom: 1px solid #353131;
+    overflow-y: hidden;
+    transition: height 4s;
+}
+
+.open-arrow {
+    display: none;
+}
+
+.arrow {
+    fill: #F4f4f4;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.question {
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.answer-header {
+    margin-bottom: 32px;
+}
+
+.normal-answer {
+    margin-top: 2px;
+    margin-bottom: 37px;
+}
+
+.indent-answer {
+    font-weight: 300;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+
+#questions {
+    margin-bottom: 50px;
+}
+
+#questions p {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.footer {
+    margin-left: 20px;
+    margin-bottom: 37px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1A1E1F;
+}
+
+#footer-content {
+    min-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+                "tl tr"
+                "ml mr"
+                "b b";
+    
+    gap: 0px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+#tbc-logo-footer {
+    width: 104px;
+    height: 30px;
+    margin-top: 32px;
+    margin-bottom: 33px;
+    grid-area: tl;
+}
+
+#mail-link {
+    width: 109px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: #00AEF3;
+    color:#F4f4f4;
+    font-size: 14px;
+    grid-area: ml;
+    margin-bottom: 35px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mail-link:hover {
+    background-color: #D5D5D5;
+    color: #1A1E1F;
+}
+
+#footer-text {
+    gap: 25px;
+    font-size: 14px;
+    grid-area: b;
+    margin-bottom: 43px;
+    text-wrap: nowrap;
+}
+
+#contact-logos {
+    gap: 15px;
+    grid-area: mr;
+}
+
+.footer-link {
+    width: 35px;
+    height: 35px;
+}
+
+#tac {
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+#tac:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+}
+
+/* @--------- Tablet Design ---------@ */
+@media screen and (min-width: 768px){
+    /* ----- Header ----- */
+    nav {
+        display: block;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    /* ----- Cards ----- */
+    #cards-section {
+        max-width: 588px;
+    }
+
+    #cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* ----- Slider ----- */
+    #slider {
+        width: 100%;
+        display: grid;
+        grid-template-rows: auto 140px auto;
+        grid-template-columns: 40px auto 40px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #slider-header {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #slider-left {
+        grid-row: 2;
+        grid-column: 1;
+        place-self: center;
+    }
+
+    #slider-right {
+        transform: scaleX(-1);
+        grid-row: 2;
+        grid-column: 3;
+        place-self: center;
+    }
+
+    .slider-page {
+        height: auto;
+    }
+
+    #slider-photos {
+        padding-top: 0px;
+        grid-row: 2;
+        grid-column: 2;
+        place-self: center;
+    }
+
+    #slider-page-dots {
+        grid-row: 3;
+        grid-column: 2;
+        place-self: center;
+    }
+
+    #slider-photos {
+        width: 100%;
+    }
+    .active-slide {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .slider-arrow {
+        display: block;
+        width: 20px;
+        height: 40px;
+    }
+}
+
+/* @--------- Fulscreen Design ---------@ */
+@media screen and (min-width: 980px){
+    /* ----- Header ----- */
+    header {
+        height: 84px;
+    }
+
+    header > a {
+        margin-left: calc((100% - 980px) / 2);
+    }
+
+    header > nav {
+        margin-right: calc((100% - 980px) / 2);
+    }
+
+
+    #tbc-logo-header {
+        width: 182px;
+        height: 40px;
+        margin-left: 13.6px;
+    }  
+
+    #header-link {
+
+        margin-right: 23.6px;
+    }
+
+    /* ----- Main Info ----- */
+    main {
+        margin-top: 84px;
+    }
+
+    #main-image {
+        height: 352px;
+    }
+
+    #main-image-text {
+        max-width: 980px;
+        top: 30.5%;
+        left:calc((100% - 980px) / 2);
+        gap: 27px;
+    }
+
+    #main-image-text > h1 {
+        font-size: 42px;
+    }
+
+    #main-image-text > h2 {
+        font-size: 49px;
+    }
+
+    #info-div {
+        max-width: 980px;
+        gap: 43px;
+        line-height: 44px;
+        padding: 0px 0px 0px 13.6px;
+        margin: 56px 0px 57px 0px;
+    }
+
+    #info-div > p {
+        font-size: 28px;
+    }
+
+    .link {
+        font-size: 24px;
+    }
+
+    #more {
+        height: 40px;
+    }
+
+    /* ----- Courses ----- */
+    #courses {
+        padding-top: 34px;
+        padding-bottom: 58px;
+    }
+
+    #cards-section {
+        max-width: 980px;
+        padding-left: 13.6px;
+        padding-right: 13.6px;
+    }
+    #courses-title {
+        margin-bottom: 67px;
+        align-self: flex-start
+    }
+
+    #cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .card {
+        width: 299.6px;
+        height: 413.6px;
+    }
+    
+    .card-image {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 34px;
+    }
+
+    .card-text {
+        display: flex;
+        flex-direction:column;
+        align-items: flex-start;
+        height: 230px;
+    }
+
+    .card-title {
+        height: 26.4px;
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .card p {
+        height: 22.4px;
+        margin-bottom: 100px;
+    }
+
+    .card a {
+        font-size: 16px;
+    }
+
+    /* ----- Slider ----- */
+    #slider-header {
+        font-size: 24px;
+    }
+    
+    #slider {
+        grid-template-columns: auto 890px auto;
+    }
+
+    #usaid {
+        width: 246px;
+        height: 74px;
+    }
+
+    #space {
+        width: 241px;
+        height: 80px;
+    }
+
+    #tnet {
+        width: 250px;
+        height: 45px;
+    }
+
+    #tegeta {
+        width: 248px;
+        height: 71px;
+    }
+
+    #spectre {
+        width: 187px;
+        height: 64px;
+    }
+
+    #tbcleasing {
+        width: 312px;
+        height: 95px;
+    }
+
+    #ufc {
+        width: 227px;
+        height: 64px;
+    }
+    
+    /* ----- Friquently Asked Questions */
+    #faq-background {
+        background-color: #161616;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #faq {
+        max-width: 980px;
+        padding: 75px 11px 32px 11px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas:
+                        "title link"
+                        "question question";
+
+    }
+
+    #faq-title {
+        grid-area: title;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    #questions-link {
+        grid-area: link;
+        margin-bottom: 20px;
+        justify-self: end;
+    }
+
+    #questions {
+        grid-area: question;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    /* ----- Footer ----- */
+    #footer-content {
+        padding: 0px;
+        max-width: 980px;
+        grid-template-areas:
+                        "tl tr"
+                        "bl br";
+    }
+
+    #tbc-logo-footer {
+        grid-area: tl;
+    }
+
+    #footer-text {
+        grid-area: bl;
+    }
+
+    #contact-logos {
+        grid-area: tr;
+        margin-top: 32px;
+        margin-bottom: 33px;
+    }
+
+    #mail-link {
+        width: 162px;
+        height: 39px;
+        grid-area: br;
+        justify-self: end;
+        align-self: end;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+
+    /* ------ Slider ------ */
+    #slider {
+        grid-template-columns: auto 980px auto;
+    }
+}
